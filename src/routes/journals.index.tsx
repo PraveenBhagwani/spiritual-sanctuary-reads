@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { journals } from "@/data/journals";
 import { useRegion } from "@/lib/region";
 
-export const Route = createFileRoute("/journals")({
+export const Route = createFileRoute("/journals/")({
   head: () => ({
     meta: [
       { title: "Monthly Journals — Dada Vaswani's Books" },

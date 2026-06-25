@@ -3,7 +3,7 @@ import { thoughts } from "@/data/thoughts";
 import { authorBySlug } from "@/data/authors";
 import thoughtsImg from "@/assets/thoughts-still.jpg";
 
-export const Route = createFileRoute("/thoughts")({
+export const Route = createFileRoute("/thoughts/")({
   head: () => ({
     meta: [
       { title: "Thoughts — Daily wisdom from the Mission" },

@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { books } from "@/data/books";
 import { BookListing } from "@/components/site/BookListing";
 
-export const Route = createFileRoute("/books")({
+export const Route = createFileRoute("/books/")({
   head: () => ({
     meta: [
       { title: "Books — Dada Vaswani's Books" },

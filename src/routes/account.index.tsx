@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 
-export const Route = createFileRoute("/account")({
+export const Route = createFileRoute("/account/")({
   head: () => ({ meta: [{ title: "My Account — Dada Vaswani's Books" }, { name: "robots", content: "noindex" }] }),
   component: Account,
 });

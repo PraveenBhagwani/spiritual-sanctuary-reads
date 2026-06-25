@@ -10,26 +10,26 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WishlistRouteImport } from './routes/wishlist'
-import { Route as ThoughtsRouteImport } from './routes/thoughts'
 import { Route as SubscriptionsRouteImport } from './routes/subscriptions'
 import { Route as StoreLocatorRouteImport } from './routes/store-locator'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SearchRouteImport } from './routes/search'
 import { Route as MissionRouteImport } from './routes/mission'
-import { Route as JournalsRouteImport } from './routes/journals'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as FaqRouteImport } from './routes/faq'
-import { Route as EbooksRouteImport } from './routes/ebooks'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CheckoutRouteImport } from './routes/checkout'
-import { Route as CategoriesRouteImport } from './routes/categories'
 import { Route as CartRouteImport } from './routes/cart'
-import { Route as BooksRouteImport } from './routes/books'
-import { Route as AuthorsRouteImport } from './routes/authors'
 import { Route as AuthRouteImport } from './routes/auth'
-import { Route as AccountRouteImport } from './routes/account'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ThoughtsIndexRouteImport } from './routes/thoughts.index'
+import { Route as JournalsIndexRouteImport } from './routes/journals.index'
+import { Route as EbooksIndexRouteImport } from './routes/ebooks.index'
+import { Route as CategoriesIndexRouteImport } from './routes/categories.index'
+import { Route as BooksIndexRouteImport } from './routes/books.index'
+import { Route as AuthorsIndexRouteImport } from './routes/authors.index'
+import { Route as AccountIndexRouteImport } from './routes/account.index'
 import { Route as ThoughtsSlugRouteImport } from './routes/thoughts.$slug'
 import { Route as JournalsSlugRouteImport } from './routes/journals.$slug'
 import { Route as EbooksSlugRouteImport } from './routes/ebooks.$slug'
@@ -41,11 +41,6 @@ import { Route as AccountOrdersRouteImport } from './routes/account.orders'
 const WishlistRoute = WishlistRouteImport.update({
   id: '/wishlist',
   path: '/wishlist',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ThoughtsRoute = ThoughtsRouteImport.update({
-  id: '/thoughts',
-  path: '/thoughts',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SubscriptionsRoute = SubscriptionsRouteImport.update({
@@ -73,11 +68,6 @@ const MissionRoute = MissionRouteImport.update({
   path: '/mission',
   getParentRoute: () => rootRouteImport,
 } as any)
-const JournalsRoute = JournalsRouteImport.update({
-  id: '/journals',
-  path: '/journals',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const GalleryRoute = GalleryRouteImport.update({
   id: '/gallery',
   path: '/gallery',
@@ -86,11 +76,6 @@ const GalleryRoute = GalleryRouteImport.update({
 const FaqRoute = FaqRouteImport.update({
   id: '/faq',
   path: '/faq',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const EbooksRoute = EbooksRouteImport.update({
-  id: '/ebooks',
-  path: '/ebooks',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -103,34 +88,14 @@ const CheckoutRoute = CheckoutRouteImport.update({
   path: '/checkout',
   getParentRoute: () => rootRouteImport,
 } as any)
-const CategoriesRoute = CategoriesRouteImport.update({
-  id: '/categories',
-  path: '/categories',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const CartRoute = CartRouteImport.update({
   id: '/cart',
   path: '/cart',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BooksRoute = BooksRouteImport.update({
-  id: '/books',
-  path: '/books',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AuthorsRoute = AuthorsRouteImport.update({
-  id: '/authors',
-  path: '/authors',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const AuthRoute = AuthRouteImport.update({
   id: '/auth',
   path: '/auth',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AccountRoute = AccountRouteImport.update({
-  id: '/account',
-  path: '/account',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -143,63 +108,91 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ThoughtsIndexRoute = ThoughtsIndexRouteImport.update({
+  id: '/thoughts/',
+  path: '/thoughts/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JournalsIndexRoute = JournalsIndexRouteImport.update({
+  id: '/journals/',
+  path: '/journals/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EbooksIndexRoute = EbooksIndexRouteImport.update({
+  id: '/ebooks/',
+  path: '/ebooks/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CategoriesIndexRoute = CategoriesIndexRouteImport.update({
+  id: '/categories/',
+  path: '/categories/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BooksIndexRoute = BooksIndexRouteImport.update({
+  id: '/books/',
+  path: '/books/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthorsIndexRoute = AuthorsIndexRouteImport.update({
+  id: '/authors/',
+  path: '/authors/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AccountIndexRoute = AccountIndexRouteImport.update({
+  id: '/account/',
+  path: '/account/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ThoughtsSlugRoute = ThoughtsSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => ThoughtsRoute,
+  id: '/thoughts/$slug',
+  path: '/thoughts/$slug',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const JournalsSlugRoute = JournalsSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => JournalsRoute,
+  id: '/journals/$slug',
+  path: '/journals/$slug',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const EbooksSlugRoute = EbooksSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => EbooksRoute,
+  id: '/ebooks/$slug',
+  path: '/ebooks/$slug',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const CategoriesSlugRoute = CategoriesSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => CategoriesRoute,
+  id: '/categories/$slug',
+  path: '/categories/$slug',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const BooksSlugRoute = BooksSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => BooksRoute,
+  id: '/books/$slug',
+  path: '/books/$slug',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const AuthorsSlugRoute = AuthorsSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => AuthorsRoute,
+  id: '/authors/$slug',
+  path: '/authors/$slug',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const AccountOrdersRoute = AccountOrdersRouteImport.update({
-  id: '/orders',
-  path: '/orders',
-  getParentRoute: () => AccountRoute,
+  id: '/account/orders',
+  path: '/account/orders',
+  getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/account': typeof AccountRouteWithChildren
   '/auth': typeof AuthRoute
-  '/authors': typeof AuthorsRouteWithChildren
-  '/books': typeof BooksRouteWithChildren
   '/cart': typeof CartRoute
-  '/categories': typeof CategoriesRouteWithChildren
   '/checkout': typeof CheckoutRoute
   '/contact': typeof ContactRoute
-  '/ebooks': typeof EbooksRouteWithChildren
   '/faq': typeof FaqRoute
   '/gallery': typeof GalleryRoute
-  '/journals': typeof JournalsRouteWithChildren
   '/mission': typeof MissionRoute
   '/search': typeof SearchRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/store-locator': typeof StoreLocatorRoute
   '/subscriptions': typeof SubscriptionsRoute
-  '/thoughts': typeof ThoughtsRouteWithChildren
   '/wishlist': typeof WishlistRoute
   '/account/orders': typeof AccountOrdersRoute
   '/authors/$slug': typeof AuthorsSlugRoute
@@ -208,28 +201,28 @@ export interface FileRoutesByFullPath {
   '/ebooks/$slug': typeof EbooksSlugRoute
   '/journals/$slug': typeof JournalsSlugRoute
   '/thoughts/$slug': typeof ThoughtsSlugRoute
+  '/account/': typeof AccountIndexRoute
+  '/authors/': typeof AuthorsIndexRoute
+  '/books/': typeof BooksIndexRoute
+  '/categories/': typeof CategoriesIndexRoute
+  '/ebooks/': typeof EbooksIndexRoute
+  '/journals/': typeof JournalsIndexRoute
+  '/thoughts/': typeof ThoughtsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/account': typeof AccountRouteWithChildren
   '/auth': typeof AuthRoute
-  '/authors': typeof AuthorsRouteWithChildren
-  '/books': typeof BooksRouteWithChildren
   '/cart': typeof CartRoute
-  '/categories': typeof CategoriesRouteWithChildren
   '/checkout': typeof CheckoutRoute
   '/contact': typeof ContactRoute
-  '/ebooks': typeof EbooksRouteWithChildren
   '/faq': typeof FaqRoute
   '/gallery': typeof GalleryRoute
-  '/journals': typeof JournalsRouteWithChildren
   '/mission': typeof MissionRoute
   '/search': typeof SearchRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/store-locator': typeof StoreLocatorRoute
   '/subscriptions': typeof SubscriptionsRoute
-  '/thoughts': typeof ThoughtsRouteWithChildren
   '/wishlist': typeof WishlistRoute
   '/account/orders': typeof AccountOrdersRoute
   '/authors/$slug': typeof AuthorsSlugRoute
@@ -238,29 +231,29 @@ export interface FileRoutesByTo {
   '/ebooks/$slug': typeof EbooksSlugRoute
   '/journals/$slug': typeof JournalsSlugRoute
   '/thoughts/$slug': typeof ThoughtsSlugRoute
+  '/account': typeof AccountIndexRoute
+  '/authors': typeof AuthorsIndexRoute
+  '/books': typeof BooksIndexRoute
+  '/categories': typeof CategoriesIndexRoute
+  '/ebooks': typeof EbooksIndexRoute
+  '/journals': typeof JournalsIndexRoute
+  '/thoughts': typeof ThoughtsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/account': typeof AccountRouteWithChildren
   '/auth': typeof AuthRoute
-  '/authors': typeof AuthorsRouteWithChildren
-  '/books': typeof BooksRouteWithChildren
   '/cart': typeof CartRoute
-  '/categories': typeof CategoriesRouteWithChildren
   '/checkout': typeof CheckoutRoute
   '/contact': typeof ContactRoute
-  '/ebooks': typeof EbooksRouteWithChildren
   '/faq': typeof FaqRoute
   '/gallery': typeof GalleryRoute
-  '/journals': typeof JournalsRouteWithChildren
   '/mission': typeof MissionRoute
   '/search': typeof SearchRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/store-locator': typeof StoreLocatorRoute
   '/subscriptions': typeof SubscriptionsRoute
-  '/thoughts': typeof ThoughtsRouteWithChildren
   '/wishlist': typeof WishlistRoute
   '/account/orders': typeof AccountOrdersRoute
   '/authors/$slug': typeof AuthorsSlugRoute
@@ -269,30 +262,30 @@ export interface FileRoutesById {
   '/ebooks/$slug': typeof EbooksSlugRoute
   '/journals/$slug': typeof JournalsSlugRoute
   '/thoughts/$slug': typeof ThoughtsSlugRoute
+  '/account/': typeof AccountIndexRoute
+  '/authors/': typeof AuthorsIndexRoute
+  '/books/': typeof BooksIndexRoute
+  '/categories/': typeof CategoriesIndexRoute
+  '/ebooks/': typeof EbooksIndexRoute
+  '/journals/': typeof JournalsIndexRoute
+  '/thoughts/': typeof ThoughtsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/about'
-    | '/account'
     | '/auth'
-    | '/authors'
-    | '/books'
     | '/cart'
-    | '/categories'
     | '/checkout'
     | '/contact'
-    | '/ebooks'
     | '/faq'
     | '/gallery'
-    | '/journals'
     | '/mission'
     | '/search'
     | '/sitemap.xml'
     | '/store-locator'
     | '/subscriptions'
-    | '/thoughts'
     | '/wishlist'
     | '/account/orders'
     | '/authors/$slug'
@@ -301,28 +294,28 @@ export interface FileRouteTypes {
     | '/ebooks/$slug'
     | '/journals/$slug'
     | '/thoughts/$slug'
+    | '/account/'
+    | '/authors/'
+    | '/books/'
+    | '/categories/'
+    | '/ebooks/'
+    | '/journals/'
+    | '/thoughts/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
-    | '/account'
     | '/auth'
-    | '/authors'
-    | '/books'
     | '/cart'
-    | '/categories'
     | '/checkout'
     | '/contact'
-    | '/ebooks'
     | '/faq'
     | '/gallery'
-    | '/journals'
     | '/mission'
     | '/search'
     | '/sitemap.xml'
     | '/store-locator'
     | '/subscriptions'
-    | '/thoughts'
     | '/wishlist'
     | '/account/orders'
     | '/authors/$slug'
@@ -331,28 +324,28 @@ export interface FileRouteTypes {
     | '/ebooks/$slug'
     | '/journals/$slug'
     | '/thoughts/$slug'
+    | '/account'
+    | '/authors'
+    | '/books'
+    | '/categories'
+    | '/ebooks'
+    | '/journals'
+    | '/thoughts'
   id:
     | '__root__'
     | '/'
     | '/about'
-    | '/account'
     | '/auth'
-    | '/authors'
-    | '/books'
     | '/cart'
-    | '/categories'
     | '/checkout'
     | '/contact'
-    | '/ebooks'
     | '/faq'
     | '/gallery'
-    | '/journals'
     | '/mission'
     | '/search'
     | '/sitemap.xml'
     | '/store-locator'
     | '/subscriptions'
-    | '/thoughts'
     | '/wishlist'
     | '/account/orders'
     | '/authors/$slug'
@@ -361,30 +354,44 @@ export interface FileRouteTypes {
     | '/ebooks/$slug'
     | '/journals/$slug'
     | '/thoughts/$slug'
+    | '/account/'
+    | '/authors/'
+    | '/books/'
+    | '/categories/'
+    | '/ebooks/'
+    | '/journals/'
+    | '/thoughts/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  AccountRoute: typeof AccountRouteWithChildren
   AuthRoute: typeof AuthRoute
-  AuthorsRoute: typeof AuthorsRouteWithChildren
-  BooksRoute: typeof BooksRouteWithChildren
   CartRoute: typeof CartRoute
-  CategoriesRoute: typeof CategoriesRouteWithChildren
   CheckoutRoute: typeof CheckoutRoute
   ContactRoute: typeof ContactRoute
-  EbooksRoute: typeof EbooksRouteWithChildren
   FaqRoute: typeof FaqRoute
   GalleryRoute: typeof GalleryRoute
-  JournalsRoute: typeof JournalsRouteWithChildren
   MissionRoute: typeof MissionRoute
   SearchRoute: typeof SearchRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   StoreLocatorRoute: typeof StoreLocatorRoute
   SubscriptionsRoute: typeof SubscriptionsRoute
-  ThoughtsRoute: typeof ThoughtsRouteWithChildren
   WishlistRoute: typeof WishlistRoute
+  AccountOrdersRoute: typeof AccountOrdersRoute
+  AuthorsSlugRoute: typeof AuthorsSlugRoute
+  BooksSlugRoute: typeof BooksSlugRoute
+  CategoriesSlugRoute: typeof CategoriesSlugRoute
+  EbooksSlugRoute: typeof EbooksSlugRoute
+  JournalsSlugRoute: typeof JournalsSlugRoute
+  ThoughtsSlugRoute: typeof ThoughtsSlugRoute
+  AccountIndexRoute: typeof AccountIndexRoute
+  AuthorsIndexRoute: typeof AuthorsIndexRoute
+  BooksIndexRoute: typeof BooksIndexRoute
+  CategoriesIndexRoute: typeof CategoriesIndexRoute
+  EbooksIndexRoute: typeof EbooksIndexRoute
+  JournalsIndexRoute: typeof JournalsIndexRoute
+  ThoughtsIndexRoute: typeof ThoughtsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -394,13 +401,6 @@ declare module '@tanstack/react-router' {
       path: '/wishlist'
       fullPath: '/wishlist'
       preLoaderRoute: typeof WishlistRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/thoughts': {
-      id: '/thoughts'
-      path: '/thoughts'
-      fullPath: '/thoughts'
-      preLoaderRoute: typeof ThoughtsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/subscriptions': {
@@ -438,13 +438,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MissionRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/journals': {
-      id: '/journals'
-      path: '/journals'
-      fullPath: '/journals'
-      preLoaderRoute: typeof JournalsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/gallery': {
       id: '/gallery'
       path: '/gallery'
@@ -457,13 +450,6 @@ declare module '@tanstack/react-router' {
       path: '/faq'
       fullPath: '/faq'
       preLoaderRoute: typeof FaqRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/ebooks': {
-      id: '/ebooks'
-      path: '/ebooks'
-      fullPath: '/ebooks'
-      preLoaderRoute: typeof EbooksRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -480,13 +466,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CheckoutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/categories': {
-      id: '/categories'
-      path: '/categories'
-      fullPath: '/categories'
-      preLoaderRoute: typeof CategoriesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/cart': {
       id: '/cart'
       path: '/cart'
@@ -494,32 +473,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CartRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/books': {
-      id: '/books'
-      path: '/books'
-      fullPath: '/books'
-      preLoaderRoute: typeof BooksRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/authors': {
-      id: '/authors'
-      path: '/authors'
-      fullPath: '/authors'
-      preLoaderRoute: typeof AuthorsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/auth': {
       id: '/auth'
       path: '/auth'
       fullPath: '/auth'
       preLoaderRoute: typeof AuthRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/account': {
-      id: '/account'
-      path: '/account'
-      fullPath: '/account'
-      preLoaderRoute: typeof AccountRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -536,159 +494,136 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/thoughts/': {
+      id: '/thoughts/'
+      path: '/thoughts'
+      fullPath: '/thoughts/'
+      preLoaderRoute: typeof ThoughtsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/journals/': {
+      id: '/journals/'
+      path: '/journals'
+      fullPath: '/journals/'
+      preLoaderRoute: typeof JournalsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ebooks/': {
+      id: '/ebooks/'
+      path: '/ebooks'
+      fullPath: '/ebooks/'
+      preLoaderRoute: typeof EbooksIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/categories/': {
+      id: '/categories/'
+      path: '/categories'
+      fullPath: '/categories/'
+      preLoaderRoute: typeof CategoriesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/books/': {
+      id: '/books/'
+      path: '/books'
+      fullPath: '/books/'
+      preLoaderRoute: typeof BooksIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/authors/': {
+      id: '/authors/'
+      path: '/authors'
+      fullPath: '/authors/'
+      preLoaderRoute: typeof AuthorsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/account/': {
+      id: '/account/'
+      path: '/account'
+      fullPath: '/account/'
+      preLoaderRoute: typeof AccountIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/thoughts/$slug': {
       id: '/thoughts/$slug'
-      path: '/$slug'
+      path: '/thoughts/$slug'
       fullPath: '/thoughts/$slug'
       preLoaderRoute: typeof ThoughtsSlugRouteImport
-      parentRoute: typeof ThoughtsRoute
+      parentRoute: typeof rootRouteImport
     }
     '/journals/$slug': {
       id: '/journals/$slug'
-      path: '/$slug'
+      path: '/journals/$slug'
       fullPath: '/journals/$slug'
       preLoaderRoute: typeof JournalsSlugRouteImport
-      parentRoute: typeof JournalsRoute
+      parentRoute: typeof rootRouteImport
     }
     '/ebooks/$slug': {
       id: '/ebooks/$slug'
-      path: '/$slug'
+      path: '/ebooks/$slug'
       fullPath: '/ebooks/$slug'
       preLoaderRoute: typeof EbooksSlugRouteImport
-      parentRoute: typeof EbooksRoute
+      parentRoute: typeof rootRouteImport
     }
     '/categories/$slug': {
       id: '/categories/$slug'
-      path: '/$slug'
+      path: '/categories/$slug'
       fullPath: '/categories/$slug'
       preLoaderRoute: typeof CategoriesSlugRouteImport
-      parentRoute: typeof CategoriesRoute
+      parentRoute: typeof rootRouteImport
     }
     '/books/$slug': {
       id: '/books/$slug'
-      path: '/$slug'
+      path: '/books/$slug'
       fullPath: '/books/$slug'
       preLoaderRoute: typeof BooksSlugRouteImport
-      parentRoute: typeof BooksRoute
+      parentRoute: typeof rootRouteImport
     }
     '/authors/$slug': {
       id: '/authors/$slug'
-      path: '/$slug'
+      path: '/authors/$slug'
       fullPath: '/authors/$slug'
       preLoaderRoute: typeof AuthorsSlugRouteImport
-      parentRoute: typeof AuthorsRoute
+      parentRoute: typeof rootRouteImport
     }
     '/account/orders': {
       id: '/account/orders'
-      path: '/orders'
+      path: '/account/orders'
       fullPath: '/account/orders'
       preLoaderRoute: typeof AccountOrdersRouteImport
-      parentRoute: typeof AccountRoute
+      parentRoute: typeof rootRouteImport
     }
   }
 }
 
-interface AccountRouteChildren {
-  AccountOrdersRoute: typeof AccountOrdersRoute
-}
-
-const AccountRouteChildren: AccountRouteChildren = {
-  AccountOrdersRoute: AccountOrdersRoute,
-}
-
-const AccountRouteWithChildren =
-  AccountRoute._addFileChildren(AccountRouteChildren)
-
-interface AuthorsRouteChildren {
-  AuthorsSlugRoute: typeof AuthorsSlugRoute
-}
-
-const AuthorsRouteChildren: AuthorsRouteChildren = {
-  AuthorsSlugRoute: AuthorsSlugRoute,
-}
-
-const AuthorsRouteWithChildren =
-  AuthorsRoute._addFileChildren(AuthorsRouteChildren)
-
-interface BooksRouteChildren {
-  BooksSlugRoute: typeof BooksSlugRoute
-}
-
-const BooksRouteChildren: BooksRouteChildren = {
-  BooksSlugRoute: BooksSlugRoute,
-}
-
-const BooksRouteWithChildren = BooksRoute._addFileChildren(BooksRouteChildren)
-
-interface CategoriesRouteChildren {
-  CategoriesSlugRoute: typeof CategoriesSlugRoute
-}
-
-const CategoriesRouteChildren: CategoriesRouteChildren = {
-  CategoriesSlugRoute: CategoriesSlugRoute,
-}
-
-const CategoriesRouteWithChildren = CategoriesRoute._addFileChildren(
-  CategoriesRouteChildren,
-)
-
-interface EbooksRouteChildren {
-  EbooksSlugRoute: typeof EbooksSlugRoute
-}
-
-const EbooksRouteChildren: EbooksRouteChildren = {
-  EbooksSlugRoute: EbooksSlugRoute,
-}
-
-const EbooksRouteWithChildren =
-  EbooksRoute._addFileChildren(EbooksRouteChildren)
-
-interface JournalsRouteChildren {
-  JournalsSlugRoute: typeof JournalsSlugRoute
-}
-
-const JournalsRouteChildren: JournalsRouteChildren = {
-  JournalsSlugRoute: JournalsSlugRoute,
-}
-
-const JournalsRouteWithChildren = JournalsRoute._addFileChildren(
-  JournalsRouteChildren,
-)
-
-interface ThoughtsRouteChildren {
-  ThoughtsSlugRoute: typeof ThoughtsSlugRoute
-}
-
-const ThoughtsRouteChildren: ThoughtsRouteChildren = {
-  ThoughtsSlugRoute: ThoughtsSlugRoute,
-}
-
-const ThoughtsRouteWithChildren = ThoughtsRoute._addFileChildren(
-  ThoughtsRouteChildren,
-)
-
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  AccountRoute: AccountRouteWithChildren,
   AuthRoute: AuthRoute,
-  AuthorsRoute: AuthorsRouteWithChildren,
-  BooksRoute: BooksRouteWithChildren,
   CartRoute: CartRoute,
-  CategoriesRoute: CategoriesRouteWithChildren,
   CheckoutRoute: CheckoutRoute,
   ContactRoute: ContactRoute,
-  EbooksRoute: EbooksRouteWithChildren,
   FaqRoute: FaqRoute,
   GalleryRoute: GalleryRoute,
-  JournalsRoute: JournalsRouteWithChildren,
   MissionRoute: MissionRoute,
   SearchRoute: SearchRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   StoreLocatorRoute: StoreLocatorRoute,
   SubscriptionsRoute: SubscriptionsRoute,
-  ThoughtsRoute: ThoughtsRouteWithChildren,
   WishlistRoute: WishlistRoute,
+  AccountOrdersRoute: AccountOrdersRoute,
+  AuthorsSlugRoute: AuthorsSlugRoute,
+  BooksSlugRoute: BooksSlugRoute,
+  CategoriesSlugRoute: CategoriesSlugRoute,
+  EbooksSlugRoute: EbooksSlugRoute,
+  JournalsSlugRoute: JournalsSlugRoute,
+  ThoughtsSlugRoute: ThoughtsSlugRoute,
+  AccountIndexRoute: AccountIndexRoute,
+  AuthorsIndexRoute: AuthorsIndexRoute,
+  BooksIndexRoute: BooksIndexRoute,
+  CategoriesIndexRoute: CategoriesIndexRoute,
+  EbooksIndexRoute: EbooksIndexRoute,
+  JournalsIndexRoute: JournalsIndexRoute,
+  ThoughtsIndexRoute: ThoughtsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

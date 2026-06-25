@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { authors } from "@/data/authors";
 import { booksByAuthor } from "@/data/books";
 
-export const Route = createFileRoute("/authors")({
+export const Route = createFileRoute("/authors/")({
   head: () => ({
     meta: [
       { title: "Authors — Dada Vaswani's Books" },
