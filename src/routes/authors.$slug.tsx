@@ -30,7 +30,7 @@ function AuthorPage() {
       <section className="bg-cream/40 border-b border-border/60">
         <div className="container-prose py-14 md:py-20 grid md:grid-cols-[auto,1fr] gap-10 items-center">
           <div className="h-40 w-40 rounded-full border-2 flex items-center justify-center mx-auto md:mx-0" style={{ borderColor: a.accent + "55", background: (a.accent ?? "#0F3D2E") + "14" }}>
-            <span className="font-serif text-5xl" style={{ color: a.accent }}>{a.name.split(" ").map((s) => s[0]).slice(0, 2).join("")}</span>
+            <span className="font-serif text-5xl" style={{ color: a.accent }}>{a.name.split(" ").map((s: string) => s[0]).slice(0, 2).join("")}</span>
           </div>
           <div>
             <div className="eyebrow"><span className="rule-gold mr-3" />Author</div>

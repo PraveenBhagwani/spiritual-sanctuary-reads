@@ -8,7 +8,9 @@ import { BookCard } from "@/components/site/BookCard";
 import { useRegion } from "@/lib/region";
 import { useCart } from "@/lib/cart";
 
-const LANG: Record<string, string> = { en: "English", hi: "Hindi", sd: "Sindhi" };
+import type { Format, Language } from "@/data/types";
+
+const LANG: Record<Language, string> = { en: "English", hi: "Hindi", sd: "Sindhi" };
 
 export const Route = createFileRoute("/books/$slug")({
   loader: ({ params }) => {
@@ -83,8 +85,8 @@ function BookDetail() {
           </div>
 
           <div className="mt-8 grid grid-cols-3 gap-px bg-border rounded-lg overflow-hidden text-sm">
-            <Meta label="Formats" value={book.formats.map((f) => f[0].toUpperCase() + f.slice(1)).join(", ")} />
-            <Meta label="Languages" value={book.languages.map((l) => LANG[l]).join(", ")} />
+            <Meta label="Formats" value={book.formats.map((f: Format) => f[0].toUpperCase() + f.slice(1)).join(", ")} />
+            <Meta label="Languages" value={book.languages.map((l: Language) => LANG[l]).join(", ")} />
             <Meta label="Pages" value={book.pages ? `${book.pages}` : "—"} />
           </div>
 
@@ -127,7 +129,7 @@ function BookDetail() {
           <div className="border border-border rounded-lg p-6 bg-card">
             <div className="eyebrow mb-3">Categories</div>
             <div className="flex flex-wrap gap-2">
-              {book.categorySlugs.map((c) => {
+              {book.categorySlugs.map((c: string) => {
                 const cat = categoryBySlug(c);
                 return cat ? (
                   <Link key={c} to="/categories/$slug" params={{ slug: c }} className="text-xs px-3 py-1 rounded-full border border-border hover:border-emerald-soft">{cat.name}</Link>
