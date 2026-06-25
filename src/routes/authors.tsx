@@ -30,7 +30,7 @@ function Authors() {
           return (
             <Link key={a.slug} to="/authors/$slug" params={{ slug: a.slug }} className="block group py-10 grid md:grid-cols-[auto,1fr,auto] gap-8 items-center hover:bg-cream/40 -mx-4 px-4 transition-colors">
               <div className="h-24 w-24 rounded-full border-2 border-emerald-deep/20 flex items-center justify-center" style={{ background: a.accent + "1a" }}>
-                <span className="font-serif text-3xl" style={{ color: a.accent }}>{a.name.split(" ").map((s) => s[0]).slice(0, 2).join("")}</span>
+                <span className="font-serif text-3xl" style={{ color: a.accent }}>{a.name.split(" ").map((s: string) => s[0]).slice(0, 2).join("")}</span>
               </div>
               <div>
                 <div className="font-serif text-2xl md:text-3xl group-hover:text-emerald-deep transition-colors">{a.name}</div>
