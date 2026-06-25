@@ -9,18 +9,25 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as WishlistRouteImport } from './routes/wishlist'
 import { Route as ThoughtsRouteImport } from './routes/thoughts'
 import { Route as SubscriptionsRouteImport } from './routes/subscriptions'
 import { Route as StoreLocatorRouteImport } from './routes/store-locator'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as SearchRouteImport } from './routes/search'
 import { Route as MissionRouteImport } from './routes/mission'
 import { Route as JournalsRouteImport } from './routes/journals'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as EbooksRouteImport } from './routes/ebooks'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CheckoutRouteImport } from './routes/checkout'
 import { Route as CategoriesRouteImport } from './routes/categories'
+import { Route as CartRouteImport } from './routes/cart'
 import { Route as BooksRouteImport } from './routes/books'
 import { Route as AuthorsRouteImport } from './routes/authors'
+import { Route as AuthRouteImport } from './routes/auth'
+import { Route as AccountRouteImport } from './routes/account'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ThoughtsSlugRouteImport } from './routes/thoughts.$slug'
@@ -29,7 +36,13 @@ import { Route as EbooksSlugRouteImport } from './routes/ebooks.$slug'
 import { Route as CategoriesSlugRouteImport } from './routes/categories.$slug'
 import { Route as BooksSlugRouteImport } from './routes/books.$slug'
 import { Route as AuthorsSlugRouteImport } from './routes/authors.$slug'
+import { Route as AccountOrdersRouteImport } from './routes/account.orders'
 
+const WishlistRoute = WishlistRouteImport.update({
+  id: '/wishlist',
+  path: '/wishlist',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ThoughtsRoute = ThoughtsRouteImport.update({
   id: '/thoughts',
   path: '/thoughts',
@@ -43,6 +56,16 @@ const SubscriptionsRoute = SubscriptionsRouteImport.update({
 const StoreLocatorRoute = StoreLocatorRouteImport.update({
   id: '/store-locator',
   path: '/store-locator',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SearchRoute = SearchRouteImport.update({
+  id: '/search',
+  path: '/search',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MissionRoute = MissionRouteImport.update({
@@ -75,9 +98,19 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CheckoutRoute = CheckoutRouteImport.update({
+  id: '/checkout',
+  path: '/checkout',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CategoriesRoute = CategoriesRouteImport.update({
   id: '/categories',
   path: '/categories',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CartRoute = CartRouteImport.update({
+  id: '/cart',
+  path: '/cart',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BooksRoute = BooksRouteImport.update({
@@ -88,6 +121,16 @@ const BooksRoute = BooksRouteImport.update({
 const AuthorsRoute = AuthorsRouteImport.update({
   id: '/authors',
   path: '/authors',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AccountRoute = AccountRouteImport.update({
+  id: '/account',
+  path: '/account',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -130,22 +173,35 @@ const AuthorsSlugRoute = AuthorsSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => AuthorsRoute,
 } as any)
+const AccountOrdersRoute = AccountOrdersRouteImport.update({
+  id: '/orders',
+  path: '/orders',
+  getParentRoute: () => AccountRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/account': typeof AccountRouteWithChildren
+  '/auth': typeof AuthRoute
   '/authors': typeof AuthorsRouteWithChildren
   '/books': typeof BooksRouteWithChildren
+  '/cart': typeof CartRoute
   '/categories': typeof CategoriesRouteWithChildren
+  '/checkout': typeof CheckoutRoute
   '/contact': typeof ContactRoute
   '/ebooks': typeof EbooksRouteWithChildren
   '/faq': typeof FaqRoute
   '/gallery': typeof GalleryRoute
   '/journals': typeof JournalsRouteWithChildren
   '/mission': typeof MissionRoute
+  '/search': typeof SearchRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/store-locator': typeof StoreLocatorRoute
   '/subscriptions': typeof SubscriptionsRoute
   '/thoughts': typeof ThoughtsRouteWithChildren
+  '/wishlist': typeof WishlistRoute
+  '/account/orders': typeof AccountOrdersRoute
   '/authors/$slug': typeof AuthorsSlugRoute
   '/books/$slug': typeof BooksSlugRoute
   '/categories/$slug': typeof CategoriesSlugRoute
@@ -156,18 +212,26 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/account': typeof AccountRouteWithChildren
+  '/auth': typeof AuthRoute
   '/authors': typeof AuthorsRouteWithChildren
   '/books': typeof BooksRouteWithChildren
+  '/cart': typeof CartRoute
   '/categories': typeof CategoriesRouteWithChildren
+  '/checkout': typeof CheckoutRoute
   '/contact': typeof ContactRoute
   '/ebooks': typeof EbooksRouteWithChildren
   '/faq': typeof FaqRoute
   '/gallery': typeof GalleryRoute
   '/journals': typeof JournalsRouteWithChildren
   '/mission': typeof MissionRoute
+  '/search': typeof SearchRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/store-locator': typeof StoreLocatorRoute
   '/subscriptions': typeof SubscriptionsRoute
   '/thoughts': typeof ThoughtsRouteWithChildren
+  '/wishlist': typeof WishlistRoute
+  '/account/orders': typeof AccountOrdersRoute
   '/authors/$slug': typeof AuthorsSlugRoute
   '/books/$slug': typeof BooksSlugRoute
   '/categories/$slug': typeof CategoriesSlugRoute
@@ -179,18 +243,26 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/account': typeof AccountRouteWithChildren
+  '/auth': typeof AuthRoute
   '/authors': typeof AuthorsRouteWithChildren
   '/books': typeof BooksRouteWithChildren
+  '/cart': typeof CartRoute
   '/categories': typeof CategoriesRouteWithChildren
+  '/checkout': typeof CheckoutRoute
   '/contact': typeof ContactRoute
   '/ebooks': typeof EbooksRouteWithChildren
   '/faq': typeof FaqRoute
   '/gallery': typeof GalleryRoute
   '/journals': typeof JournalsRouteWithChildren
   '/mission': typeof MissionRoute
+  '/search': typeof SearchRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/store-locator': typeof StoreLocatorRoute
   '/subscriptions': typeof SubscriptionsRoute
   '/thoughts': typeof ThoughtsRouteWithChildren
+  '/wishlist': typeof WishlistRoute
+  '/account/orders': typeof AccountOrdersRoute
   '/authors/$slug': typeof AuthorsSlugRoute
   '/books/$slug': typeof BooksSlugRoute
   '/categories/$slug': typeof CategoriesSlugRoute
@@ -203,18 +275,26 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/account'
+    | '/auth'
     | '/authors'
     | '/books'
+    | '/cart'
     | '/categories'
+    | '/checkout'
     | '/contact'
     | '/ebooks'
     | '/faq'
     | '/gallery'
     | '/journals'
     | '/mission'
+    | '/search'
+    | '/sitemap.xml'
     | '/store-locator'
     | '/subscriptions'
     | '/thoughts'
+    | '/wishlist'
+    | '/account/orders'
     | '/authors/$slug'
     | '/books/$slug'
     | '/categories/$slug'
@@ -225,18 +305,26 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/account'
+    | '/auth'
     | '/authors'
     | '/books'
+    | '/cart'
     | '/categories'
+    | '/checkout'
     | '/contact'
     | '/ebooks'
     | '/faq'
     | '/gallery'
     | '/journals'
     | '/mission'
+    | '/search'
+    | '/sitemap.xml'
     | '/store-locator'
     | '/subscriptions'
     | '/thoughts'
+    | '/wishlist'
+    | '/account/orders'
     | '/authors/$slug'
     | '/books/$slug'
     | '/categories/$slug'
@@ -247,18 +335,26 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/account'
+    | '/auth'
     | '/authors'
     | '/books'
+    | '/cart'
     | '/categories'
+    | '/checkout'
     | '/contact'
     | '/ebooks'
     | '/faq'
     | '/gallery'
     | '/journals'
     | '/mission'
+    | '/search'
+    | '/sitemap.xml'
     | '/store-locator'
     | '/subscriptions'
     | '/thoughts'
+    | '/wishlist'
+    | '/account/orders'
     | '/authors/$slug'
     | '/books/$slug'
     | '/categories/$slug'
@@ -270,22 +366,36 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AccountRoute: typeof AccountRouteWithChildren
+  AuthRoute: typeof AuthRoute
   AuthorsRoute: typeof AuthorsRouteWithChildren
   BooksRoute: typeof BooksRouteWithChildren
+  CartRoute: typeof CartRoute
   CategoriesRoute: typeof CategoriesRouteWithChildren
+  CheckoutRoute: typeof CheckoutRoute
   ContactRoute: typeof ContactRoute
   EbooksRoute: typeof EbooksRouteWithChildren
   FaqRoute: typeof FaqRoute
   GalleryRoute: typeof GalleryRoute
   JournalsRoute: typeof JournalsRouteWithChildren
   MissionRoute: typeof MissionRoute
+  SearchRoute: typeof SearchRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   StoreLocatorRoute: typeof StoreLocatorRoute
   SubscriptionsRoute: typeof SubscriptionsRoute
   ThoughtsRoute: typeof ThoughtsRouteWithChildren
+  WishlistRoute: typeof WishlistRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/wishlist': {
+      id: '/wishlist'
+      path: '/wishlist'
+      fullPath: '/wishlist'
+      preLoaderRoute: typeof WishlistRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/thoughts': {
       id: '/thoughts'
       path: '/thoughts'
@@ -305,6 +415,20 @@ declare module '@tanstack/react-router' {
       path: '/store-locator'
       fullPath: '/store-locator'
       preLoaderRoute: typeof StoreLocatorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/search': {
+      id: '/search'
+      path: '/search'
+      fullPath: '/search'
+      preLoaderRoute: typeof SearchRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/mission': {
@@ -349,11 +473,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/checkout': {
+      id: '/checkout'
+      path: '/checkout'
+      fullPath: '/checkout'
+      preLoaderRoute: typeof CheckoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/categories': {
       id: '/categories'
       path: '/categories'
       fullPath: '/categories'
       preLoaderRoute: typeof CategoriesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cart': {
+      id: '/cart'
+      path: '/cart'
+      fullPath: '/cart'
+      preLoaderRoute: typeof CartRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/books': {
@@ -368,6 +506,20 @@ declare module '@tanstack/react-router' {
       path: '/authors'
       fullPath: '/authors'
       preLoaderRoute: typeof AuthorsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/account': {
+      id: '/account'
+      path: '/account'
+      fullPath: '/account'
+      preLoaderRoute: typeof AccountRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -426,8 +578,26 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthorsSlugRouteImport
       parentRoute: typeof AuthorsRoute
     }
+    '/account/orders': {
+      id: '/account/orders'
+      path: '/orders'
+      fullPath: '/account/orders'
+      preLoaderRoute: typeof AccountOrdersRouteImport
+      parentRoute: typeof AccountRoute
+    }
   }
 }
+
+interface AccountRouteChildren {
+  AccountOrdersRoute: typeof AccountOrdersRoute
+}
+
+const AccountRouteChildren: AccountRouteChildren = {
+  AccountOrdersRoute: AccountOrdersRoute,
+}
+
+const AccountRouteWithChildren =
+  AccountRoute._addFileChildren(AccountRouteChildren)
 
 interface AuthorsRouteChildren {
   AuthorsSlugRoute: typeof AuthorsSlugRoute
@@ -500,18 +670,25 @@ const ThoughtsRouteWithChildren = ThoughtsRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AccountRoute: AccountRouteWithChildren,
+  AuthRoute: AuthRoute,
   AuthorsRoute: AuthorsRouteWithChildren,
   BooksRoute: BooksRouteWithChildren,
+  CartRoute: CartRoute,
   CategoriesRoute: CategoriesRouteWithChildren,
+  CheckoutRoute: CheckoutRoute,
   ContactRoute: ContactRoute,
   EbooksRoute: EbooksRouteWithChildren,
   FaqRoute: FaqRoute,
   GalleryRoute: GalleryRoute,
   JournalsRoute: JournalsRouteWithChildren,
   MissionRoute: MissionRoute,
+  SearchRoute: SearchRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   StoreLocatorRoute: StoreLocatorRoute,
   SubscriptionsRoute: SubscriptionsRoute,
   ThoughtsRoute: ThoughtsRouteWithChildren,
+  WishlistRoute: WishlistRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
