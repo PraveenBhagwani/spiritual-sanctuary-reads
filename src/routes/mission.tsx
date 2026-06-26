@@ -6,7 +6,7 @@ const CHAPTERS = [
   { year: "1949", title: "A new home in Pune", body: "After Partition, the Mission settles in Pune, India. A school is opened. A small kitchen. A clinic. And — quietly — a bookstore." },
   { year: "1966", title: "The work continues", body: "On Sadhu Vaswani's passing, Dada J. P. Vaswani assumes leadership, carrying the message of love, service and reverence for life across continents." },
   { year: "2018", title: "A lifetime of teaching", body: "Dada J. P. Vaswani's passing at one hundred years closes a remarkable chapter. The books, the journals and the work remain — daily company for seekers everywhere." },
-  { year: "Today", title: "The bookstore", body: "From a small shop near Pune Railway Station — and now from this quiet website — we continue to publish, print and post the Mission's books to readers in India, the United States and beyond." },
+  { year: "Today", title: "The bookstore", body: "From our main store on Sadhu Vaswani Road, our book stall at Pune Railway Station, and now from this quiet website, we continue to publish, print and post the Mission's books to readers across India." },
 ];
 
 export const Route = createFileRoute("/mission")({
