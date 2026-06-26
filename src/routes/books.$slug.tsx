@@ -103,10 +103,10 @@ function BookDetail() {
           </div>
 
           <div className="mt-10 grid sm:grid-cols-2 gap-3 text-sm">
-            <Trust icon={Truck} title="Shipped from Pune & New Jersey" body="3–7 days within India · 5–10 across the USA." />
+            <Trust icon={Truck} title="Shipped from Pune" body="3–7 business days across India." />
             <Trust icon={Check} title="Carefully packaged" body="Every book wrapped to arrive as it left." />
-            {book.formats.includes("ebook") && <Trust icon={Download} title="Instant download" body="EPUB and PDF in your account at checkout." />}
-            <Trust icon={MapPin} title="Or visit our Pune store" body="Browse and buy near Pune Railway Station." />
+            {book.formats.includes("ebook") && <Trust icon={Download} title="Instant EPUB download" body="Available in your account at checkout." />}
+            <Trust icon={MapPin} title="Or visit our Pune store" body="Browse and buy at the Mission Book Store." />
           </div>
         </div>
       </section>

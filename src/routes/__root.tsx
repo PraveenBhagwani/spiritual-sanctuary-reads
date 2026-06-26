@@ -62,7 +62,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Dada Vaswani's Books · Sadhu Vaswani Mission" },
-      { name: "description", content: "A curated online bookstore of spiritual books, eBooks, monthly journals and reflections from the Sadhu Vaswani Mission. Shipping across India and the United States." },
+      { name: "description", content: "The official online bookstore of the Sadhu Vaswani Mission. Books, eBooks, monthly journals and reflections by Sadhu Vaswani and Dada J. P. Vaswani — published by Gita Publishing House, delivered across India." },
       { name: "theme-color", content: "#0F3D2E" },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Dada Vaswani's Books" },

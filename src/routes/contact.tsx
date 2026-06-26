@@ -22,9 +22,9 @@ function Contact() {
         <h1 className="font-serif text-4xl md:text-5xl">We'd love to hear from you.</h1>
         <p className="mt-4 text-muted-foreground leading-relaxed">Questions about an order, a book recommendation, or a visit to the Pune store — write to us and we'll reply within two working days.</p>
         <div className="mt-10 space-y-5 text-sm">
-          <div className="flex gap-3"><MapPin className="h-5 w-5 text-emerald-deep mt-0.5" /><div><div className="font-serif text-base">Visit</div><div className="text-muted-foreground">10 Sadhu Vaswani Path, Pune 411001, India</div></div></div>
+          <div className="flex gap-3"><MapPin className="h-5 w-5 text-emerald-deep mt-0.5" /><div><div className="font-serif text-base">Visit</div><div className="text-muted-foreground">10, Sadhu Vaswani Road, Agarkar Nagar, Camp, Pune — 411001</div></div></div>
           <div className="flex gap-3"><Mail className="h-5 w-5 text-emerald-deep mt-0.5" /><div><div className="font-serif text-base">Write</div><a href="mailto:books@svmission.org" className="text-muted-foreground hover:text-emerald-deep">books@svmission.org</a></div></div>
-          <div className="flex gap-3"><Phone className="h-5 w-5 text-emerald-deep mt-0.5" /><div><div className="font-serif text-base">Call</div><div className="text-muted-foreground">India: +91 20 4040 4040<br/>USA: +1 732 469 4040</div></div></div>
+          <div className="flex gap-3"><Phone className="h-5 w-5 text-emerald-deep mt-0.5" /><div><div className="font-serif text-base">Call</div><a href="tel:+912026111118" className="text-muted-foreground hover:text-emerald-deep">020-26111118</a><div className="text-xs text-muted-foreground mt-1">Mon — Sat · 9:30 AM to 6 PM</div></div></div>
         </div>
       </aside>
       <form className="bg-card border border-border rounded-2xl p-8 md:p-10 space-y-5">
@@ -34,11 +34,6 @@ function Contact() {
         </div>
         <Field label="Subject"><input type="text" className="form-input" /></Field>
         <Field label="Message"><textarea required rows={6} className="form-input resize-none" /></Field>
-        <Field label="Region">
-          <select className="form-input">
-            <option>India</option><option>United States</option><option>Other</option>
-          </select>
-        </Field>
         <button type="submit" className="w-full px-7 py-3.5 rounded-full bg-emerald-deep text-ivory text-sm tracking-[0.18em] uppercase hover:bg-emerald-soft">Send message</button>
         <style>{`.form-input{width:100%;border:1px solid var(--border);background:var(--background);border-radius:.5rem;padding:.7rem 1rem;font-size:.95rem;outline:none;}.form-input:focus{border-color:var(--emerald-soft)}`}</style>
       </form>

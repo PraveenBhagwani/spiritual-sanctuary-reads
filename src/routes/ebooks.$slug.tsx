@@ -65,7 +65,7 @@ function EbookDetail() {
           <div className="mt-10 grid sm:grid-cols-2 gap-3 text-sm">
             <div className="flex gap-3 p-4 border border-border rounded-lg bg-card">
               <Download className="h-5 w-5 text-emerald-deep shrink-0" />
-              <div><div className="font-serif text-sm">EPUB & PDF</div><div className="text-xs text-muted-foreground">Both formats included.</div></div>
+              <div><div className="font-serif text-sm">EPUB format</div><div className="text-xs text-muted-foreground">Read on phone, tablet or e-reader.</div></div>
             </div>
             <div className="flex gap-3 p-4 border border-border rounded-lg bg-card">
               <Check className="h-5 w-5 text-emerald-deep shrink-0" />
