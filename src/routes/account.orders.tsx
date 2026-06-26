@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 
 const ORDERS = [
   { id: "SVM-24108", date: "11 June 2026", items: 2, total: "₹445", status: "Delivered" },
-  { id: "SVM-24102", date: "29 May 2026", items: 1, total: "₹250", status: "Shipped" },
+  { id: "SVM-24102", date: "29 May 2026", items: 1, total: "₹250", status: "Delivered" },
 ];
 
 export const Route = createFileRoute("/account/orders")({

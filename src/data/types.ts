@@ -11,6 +11,7 @@ export interface Author {
   bio: string;
   era?: string;
   accent?: string; // hex for cover treatment
+  portrait?: string; // image URL
 }
 
 export interface Category {

@@ -29,13 +29,17 @@ function AuthorPage() {
     <div>
       <section className="bg-cream/40 border-b border-border/60">
         <div className="container-prose py-14 md:py-20 grid md:grid-cols-[auto,1fr] gap-10 items-center">
-          <div className="h-40 w-40 rounded-full border-2 flex items-center justify-center mx-auto md:mx-0" style={{ borderColor: a.accent + "55", background: (a.accent ?? "#0F3D2E") + "14" }}>
-            <span className="font-serif text-5xl" style={{ color: a.accent }}>{a.name.split(" ").map((s: string) => s[0]).slice(0, 2).join("")}</span>
-          </div>
+          {a.portrait ? (
+            <img src={a.portrait} alt={a.name} width={240} height={320} className="h-56 w-44 md:h-72 md:w-56 object-cover object-top rounded-md shadow-soft mx-auto md:mx-0" />
+          ) : (
+            <div className="h-40 w-40 rounded-full border-2 flex items-center justify-center mx-auto md:mx-0" style={{ borderColor: (a.accent ?? "#0F3D2E") + "55", background: (a.accent ?? "#0F3D2E") + "14" }}>
+              <span className="font-serif text-5xl" style={{ color: a.accent }}>{a.name.split(" ").map((s: string) => s[0]).slice(0, 2).join("")}</span>
+            </div>
+          )}
           <div>
-            <div className="eyebrow"><span className="rule-gold mr-3" />Author</div>
+            <div className="eyebrow"><span className="rule-gold mr-3" />{a.title}</div>
             <h1 className="font-serif text-4xl md:text-5xl mt-3">{a.name}</h1>
-            <div className="text-xs tracking-[0.18em] uppercase text-muted-foreground mt-2">{a.title}{a.era && ` · ${a.era}`}</div>
+            {a.era && <div className="text-xs tracking-[0.18em] uppercase text-muted-foreground mt-2">{a.era}</div>}
             <p className="mt-5 text-lg text-muted-foreground max-w-3xl leading-relaxed">{a.bio}</p>
           </div>
         </div>
