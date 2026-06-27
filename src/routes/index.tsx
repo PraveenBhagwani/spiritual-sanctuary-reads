@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, MapPin, Phone, Clock, Train } from "lucide-react";
+import { ArrowRight, MapPin, Phone, Clock, Train, Truck, ShieldCheck, BookOpen, Headphones } from "lucide-react";
 import heroImg from "@/assets/hero-bookstore.jpg";
 import thoughtsImg from "@/assets/thoughts-still.jpg";
 import sadhuPortrait from "@/assets/sadhu-vaswani.png.asset.json";
