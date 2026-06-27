@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, MapPin, Phone, Clock, Train } from "lucide-react";
 import heroImg from "@/assets/hero-bookstore.jpg";
 import thoughtsImg from "@/assets/thoughts-still.jpg";
-import missionImg from "@/assets/mission-portrait.jpg";
+import sadhuPortrait from "@/assets/sadhu-vaswani.png.asset.json";
 import bookStall from "@/assets/book-stall.png.asset.json";
 import gphLogo from "@/assets/gph-logo.png.asset.json";
 import { books } from "@/data/books";
@@ -73,15 +73,15 @@ function Home() {
       {/* Browse Categories */}
       <section className="container-prose py-20 md:py-24">
         <SectionHeading eyebrow="Find your path" title="Browse categories" align="center" />
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5">
           {categories.map((c) => (
-            <Link key={c.slug} to="/categories/$slug" params={{ slug: c.slug }} className="group p-6 border border-border bg-background rounded-lg lift hover:lift-hover hover:bg-emerald-deep hover:text-ivory transition-colors">
-              <div className="text-[0.65rem] tracking-[0.28em] uppercase text-emerald-soft group-hover:text-gold-soft">Category</div>
-              <h3 className="font-serif text-2xl mt-2">{c.name}</h3>
-              <p className="text-sm mt-3 text-muted-foreground group-hover:text-ivory/70 leading-relaxed">{c.blurb}</p>
+            <Link key={c.slug} to="/categories/$slug" params={{ slug: c.slug }} className="group flex flex-col h-full p-5 border border-border bg-background rounded-lg lift hover:lift-hover hover:bg-emerald-deep hover:text-ivory transition-colors">
+              <h3 className="font-serif text-xl md:text-[1.35rem] leading-tight">{c.name}</h3>
+              <p className="text-[0.82rem] mt-2 text-muted-foreground group-hover:text-ivory/70 leading-relaxed line-clamp-2">{c.blurb}</p>
             </Link>
           ))}
         </div>
+
       </section>
 
       {/* Best Sellers */}
@@ -146,27 +146,28 @@ function Home() {
         <div className="grid md:grid-cols-2 gap-10 md:gap-14 mt-4">
           {authors.map((a) => (
             <div key={a.slug} className="border border-border rounded-2xl bg-card overflow-hidden lift hover:lift-hover">
-              <div className="grid grid-cols-[auto,1fr] gap-6 p-6 md:p-8 items-start">
+              <div className="grid grid-cols-[auto,1fr] gap-7 p-7 md:p-9 items-start">
                 {a.portrait && (
                   <img
                     src={a.portrait}
                     alt={a.name}
-                    width={160}
-                    height={200}
+                    width={200}
+                    height={250}
                     loading="lazy"
-                    className="h-32 w-24 md:h-40 md:w-32 object-cover object-top rounded-md shadow-soft"
+                    className="h-40 w-32 md:h-52 md:w-40 object-cover object-top rounded-md shadow-soft"
                   />
                 )}
                 <div>
                   <div className="text-[0.62rem] tracking-[0.28em] uppercase text-gold">{a.title}</div>
                   <h3 className="font-serif text-2xl md:text-3xl mt-2 text-emerald-deep">{a.name}</h3>
                   {a.era && <div className="text-xs tracking-[0.18em] uppercase text-muted-foreground mt-1">{a.era}</div>}
-                  <p className="mt-4 text-sm text-muted-foreground leading-relaxed line-clamp-4">{a.bio}</p>
+                  <p className="mt-4 text-sm text-muted-foreground leading-relaxed line-clamp-3">{a.bio}</p>
                   <Link to="/authors/$slug" params={{ slug: a.slug }} className="mt-5 inline-flex items-center gap-2 text-xs tracking-[0.22em] uppercase text-emerald-deep hover:text-charcoal transition-colors">
                     Learn more <ArrowRight className="h-3.5 w-3.5" />
                   </Link>
                 </div>
               </div>
+
             </div>
           ))}
         </div>
@@ -233,7 +234,7 @@ function Home() {
                   <MapPin className="h-4 w-4 text-emerald-deep mt-0.5 shrink-0" />
                   10, Sadhu Vaswani Road, Agarkar Nagar, Camp, Pune — 411001
                 </p>
-                <a href="https://www.google.com/maps/search/?api=1&query=Sadhu+Vaswani+Mission+10+Sadhu+Vaswani+Road+Pune+411001" target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-2 text-xs tracking-[0.22em] uppercase text-emerald-deep hover:text-charcoal">
+                <a href="https://www.google.com/maps/search/?api=1&query=Sadhu+Vaswani+Mission+10+Sadhu+Vaswani+Road+Pune+411001" target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-emerald-deep text-ivory text-[0.7rem] tracking-[0.22em] uppercase hover:bg-emerald-soft transition-all hover:-translate-y-0.5">
                   Get directions <ArrowRight className="h-3.5 w-3.5" />
                 </a>
               </div>
@@ -244,10 +245,11 @@ function Home() {
                   <Train className="h-4 w-4 text-emerald-deep mt-0.5 shrink-0" />
                   Platform 1, Pune Railway Station, Agarkar Nagar, Pune — 411001
                 </p>
-                <a href="https://www.google.com/maps/search/?api=1&query=Pune+Railway+Station+Platform+1" target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-2 text-xs tracking-[0.22em] uppercase text-emerald-deep hover:text-charcoal">
+                <a href="https://www.google.com/maps/search/?api=1&query=Pune+Railway+Station+Platform+1" target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-emerald-deep text-ivory text-[0.7rem] tracking-[0.22em] uppercase hover:bg-emerald-soft transition-all hover:-translate-y-0.5">
                   Get directions <ArrowRight className="h-3.5 w-3.5" />
                 </a>
               </div>
+
               <div className="border border-border rounded-xl bg-background p-6 text-sm text-muted-foreground space-y-1.5">
                 <div className="flex items-center gap-2"><Phone className="h-4 w-4 text-emerald-deep" /><a href="tel:+912026111118" className="font-serif text-base text-charcoal">020-26111118</a></div>
                 <div className="flex items-center gap-2"><Clock className="h-4 w-4 text-emerald-deep" /><span>Mon — Sat · 9:30 AM to 6 PM</span></div>
@@ -280,9 +282,10 @@ function Home() {
       {/* About Sadhu Vaswani Mission */}
       <section className="bg-emerald-deep text-ivory">
         <div className="container-prose py-20 md:py-28 grid lg:grid-cols-[1fr,1.2fr] gap-14 items-center">
-          <div className="relative aspect-[4/5] rounded-lg overflow-hidden">
-            <img src={missionImg} alt="Reverent portrait" width={1200} height={1500} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+          <div className="relative aspect-[4/5] rounded-lg overflow-hidden bg-ivory/5">
+            <img src={sadhuPortrait.url} alt="Sadhu T. L. Vaswani" width={1200} height={1500} loading="lazy" className="w-full h-full object-cover object-top transition-transform duration-700 hover:scale-105" />
           </div>
+
           <div>
             <div className="flex items-center gap-3 mb-4 text-ivory/70"><span className="inline-block h-px w-10 bg-gold-soft" /><span className="text-[0.72rem] tracking-[0.28em] uppercase">Our Mission</span></div>
             <h2 className="font-serif text-4xl md:text-5xl leading-[1.05]">About the Sadhu Vaswani Mission</h2>
