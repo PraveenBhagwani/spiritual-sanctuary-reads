@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, MapPin, Phone, Clock, Train } from "lucide-react";
 import heroImg from "@/assets/hero-bookstore.jpg";
 import thoughtsImg from "@/assets/thoughts-still.jpg";
-import missionImg from "@/assets/mission-portrait.jpg";
+import sadhuPortrait from "@/assets/sadhu-vaswani.png.asset.json";
 import bookStall from "@/assets/book-stall.png.asset.json";
 import gphLogo from "@/assets/gph-logo.png.asset.json";
 import { books } from "@/data/books";
