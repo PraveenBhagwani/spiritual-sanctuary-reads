@@ -146,27 +146,28 @@ function Home() {
         <div className="grid md:grid-cols-2 gap-10 md:gap-14 mt-4">
           {authors.map((a) => (
             <div key={a.slug} className="border border-border rounded-2xl bg-card overflow-hidden lift hover:lift-hover">
-              <div className="grid grid-cols-[auto,1fr] gap-6 p-6 md:p-8 items-start">
+              <div className="grid grid-cols-[auto,1fr] gap-7 p-7 md:p-9 items-start">
                 {a.portrait && (
                   <img
                     src={a.portrait}
                     alt={a.name}
-                    width={160}
-                    height={200}
+                    width={200}
+                    height={250}
                     loading="lazy"
-                    className="h-32 w-24 md:h-40 md:w-32 object-cover object-top rounded-md shadow-soft"
+                    className="h-40 w-32 md:h-52 md:w-40 object-cover object-top rounded-md shadow-soft"
                   />
                 )}
                 <div>
                   <div className="text-[0.62rem] tracking-[0.28em] uppercase text-gold">{a.title}</div>
                   <h3 className="font-serif text-2xl md:text-3xl mt-2 text-emerald-deep">{a.name}</h3>
                   {a.era && <div className="text-xs tracking-[0.18em] uppercase text-muted-foreground mt-1">{a.era}</div>}
-                  <p className="mt-4 text-sm text-muted-foreground leading-relaxed line-clamp-4">{a.bio}</p>
+                  <p className="mt-4 text-sm text-muted-foreground leading-relaxed line-clamp-3">{a.bio}</p>
                   <Link to="/authors/$slug" params={{ slug: a.slug }} className="mt-5 inline-flex items-center gap-2 text-xs tracking-[0.22em] uppercase text-emerald-deep hover:text-charcoal transition-colors">
                     Learn more <ArrowRight className="h-3.5 w-3.5" />
                   </Link>
                 </div>
               </div>
+
             </div>
           ))}
         </div>
