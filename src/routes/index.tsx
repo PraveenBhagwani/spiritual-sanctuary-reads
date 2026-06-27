@@ -71,17 +71,16 @@ function Home() {
       </section>
 
       {/* Browse Categories */}
-      <section className="container-prose py-20 md:py-24">
+      <section className="container-prose py-10 md:py-14">
         <SectionHeading eyebrow="Find your path" title="Browse categories" align="center" />
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
           {categories.map((c) => (
-            <Link key={c.slug} to="/categories/$slug" params={{ slug: c.slug }} className="group flex flex-col h-full p-5 border border-border bg-background rounded-lg lift hover:lift-hover hover:bg-emerald-deep hover:text-ivory transition-colors">
-              <h3 className="font-serif text-xl md:text-[1.35rem] leading-tight">{c.name}</h3>
-              <p className="text-[0.82rem] mt-2 text-muted-foreground group-hover:text-ivory/70 leading-relaxed line-clamp-2">{c.blurb}</p>
+            <Link key={c.slug} to="/categories/$slug" params={{ slug: c.slug }} className="group flex flex-col h-full p-3 border border-border bg-background rounded-lg lift hover:lift-hover hover:bg-emerald-deep hover:text-ivory transition-colors">
+              <h3 className="font-serif text-base md:text-[1.05rem] leading-tight">{c.name}</h3>
+              <p className="text-xs mt-1 text-muted-foreground group-hover:text-ivory/70 leading-relaxed line-clamp-2">{c.blurb}</p>
             </Link>
           ))}
         </div>
-
       </section>
 
       {/* Best Sellers */}
