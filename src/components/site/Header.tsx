@@ -26,37 +26,44 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-40 bg-background/85 backdrop-blur border-b border-border/60">
-      {/* Utility bar */}
-      <div className="hidden md:block bg-emerald-deep text-ivory/90 text-[0.72rem] tracking-[0.18em] uppercase">
-        <div className="container-prose flex items-center justify-between py-2">
-          <span className="font-serif italic normal-case tracking-normal text-sm text-ivory/80">
-            "Begin the day with God. The day will follow your beginning."
-          </span>
-          <div className="flex items-center gap-5">
-            <span className="text-ivory/70">English</span>
-            <Link to="/store-locator" className="inline-flex items-center gap-1.5 hover:text-ivory">
-              <MapPin className="h-3 w-3" /> Visit Our Bookstores
-            </Link>
+      {/* Utility bar — slow marquee */}
+      <div className="hidden md:block bg-emerald-deep text-ivory/90 text-sm marquee-pause">
+        <div className="relative overflow-hidden py-2.5">
+          <div className="marquee-track flex w-max whitespace-nowrap gap-16 pl-16 font-serif italic text-ivory/85">
+            {Array.from({ length: 2 }).map((_, i) => (
+              <span key={i} className="flex items-center gap-16">
+                <span>"Begin the day with God. The day will follow your beginning."</span>
+                <span className="text-gold-soft">·</span>
+                <span>"Love is the language the heart understands."</span>
+                <span className="text-gold-soft">·</span>
+                <span>"In silence, the soul finds its song."</span>
+                <span className="text-gold-soft">·</span>
+              </span>
+            ))}
           </div>
         </div>
       </div>
 
-      <div className="container-prose flex items-center gap-6 py-4">
-        <Link to="/" className="flex items-center gap-3 shrink-0">
+      <div className="container-prose flex items-center gap-6 py-6 md:py-7">
+        <Link to="/" className="flex items-center gap-4 shrink-0">
           <img
             src={gphLogo.url}
             alt="Gita Publishing House"
-            width={44}
-            height={44}
-            className="h-11 w-11 object-contain"
+            width={60}
+            height={60}
+            className="h-14 w-14 md:h-16 md:w-16 object-contain"
           />
-          <div className="leading-tight">
-            <div className="font-serif text-xl text-emerald-deep">Dada Vaswani's Books</div>
-            <div className="text-[0.62rem] tracking-[0.22em] uppercase text-muted-foreground">
+          <div className="leading-tight space-y-1">
+            <div className="font-serif text-xl md:text-[1.4rem] text-emerald-deep tracking-tight">Dada Vaswani's Books</div>
+            <div className="text-[0.62rem] tracking-[0.24em] uppercase text-muted-foreground">
               Official Bookstore of the Sadhu Vaswani Mission
+            </div>
+            <div className="text-[0.58rem] tracking-[0.28em] uppercase text-gold font-medium">
+              Published by Gita Publishing House
             </div>
           </div>
         </Link>
+
 
         <form onSubmit={onSearch} className="hidden lg:flex flex-1 max-w-md mx-auto relative">
           <Search className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
