@@ -234,7 +234,7 @@ function Home() {
                   <MapPin className="h-4 w-4 text-emerald-deep mt-0.5 shrink-0" />
                   10, Sadhu Vaswani Road, Agarkar Nagar, Camp, Pune — 411001
                 </p>
-                <a href="https://www.google.com/maps/search/?api=1&query=Sadhu+Vaswani+Mission+10+Sadhu+Vaswani+Road+Pune+411001" target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-2 text-xs tracking-[0.22em] uppercase text-emerald-deep hover:text-charcoal">
+                <a href="https://www.google.com/maps/search/?api=1&query=Sadhu+Vaswani+Mission+10+Sadhu+Vaswani+Road+Pune+411001" target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-emerald-deep text-ivory text-[0.7rem] tracking-[0.22em] uppercase hover:bg-emerald-soft transition-all hover:-translate-y-0.5">
                   Get directions <ArrowRight className="h-3.5 w-3.5" />
                 </a>
               </div>
@@ -245,10 +245,11 @@ function Home() {
                   <Train className="h-4 w-4 text-emerald-deep mt-0.5 shrink-0" />
                   Platform 1, Pune Railway Station, Agarkar Nagar, Pune — 411001
                 </p>
-                <a href="https://www.google.com/maps/search/?api=1&query=Pune+Railway+Station+Platform+1" target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-2 text-xs tracking-[0.22em] uppercase text-emerald-deep hover:text-charcoal">
+                <a href="https://www.google.com/maps/search/?api=1&query=Pune+Railway+Station+Platform+1" target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-emerald-deep text-ivory text-[0.7rem] tracking-[0.22em] uppercase hover:bg-emerald-soft transition-all hover:-translate-y-0.5">
                   Get directions <ArrowRight className="h-3.5 w-3.5" />
                 </a>
               </div>
+
               <div className="border border-border rounded-xl bg-background p-6 text-sm text-muted-foreground space-y-1.5">
                 <div className="flex items-center gap-2"><Phone className="h-4 w-4 text-emerald-deep" /><a href="tel:+912026111118" className="font-serif text-base text-charcoal">020-26111118</a></div>
                 <div className="flex items-center gap-2"><Clock className="h-4 w-4 text-emerald-deep" /><span>Mon — Sat · 9:30 AM to 6 PM</span></div>
