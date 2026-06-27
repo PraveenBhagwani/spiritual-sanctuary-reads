@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
-import { Heart, Menu, Search, ShoppingBag, User, X, MapPin } from "lucide-react";
+import { Heart, Menu, Search, ShoppingBag, User, X } from "lucide-react";
 import { useCart } from "@/lib/cart";
 import gphLogo from "@/assets/gph-logo.png.asset.json";
 
