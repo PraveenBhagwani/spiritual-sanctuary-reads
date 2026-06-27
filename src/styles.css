@@ -141,3 +141,21 @@
   transform: translateY(-4px);
   box-shadow: var(--shadow-lift);
 }
+
+@keyframes marquee-x {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@utility marquee-track {
+  animation: marquee-x 60s linear infinite;
+  will-change: transform;
+}
+
+@keyframes soft-fade-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@utility soft-fade-up {
+  animation: soft-fade-up 700ms cubic-bezier(.2,.7,.2,1) both;
+}
+
