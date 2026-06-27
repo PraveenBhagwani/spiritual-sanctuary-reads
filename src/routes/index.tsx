@@ -69,6 +69,25 @@ function Home() {
           </div>
         </div>
       </section>
+ 
+      {/* Trust Strip */}
+      <section className="border-b border-border/40">
+        <div className="container-prose py-5 md:py-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { Icon: Truck, label: "PAN India Delivery" },
+              { Icon: ShieldCheck, label: "Secure Payments" },
+              { Icon: BookOpen, label: "Official Publications" },
+              { Icon: Headphones, label: "Customer Support" },
+            ].map((item, i) => (
+              <div key={item.label} className={`flex items-center justify-center gap-2 ${i < 3 ? 'md:border-r md:border-border/40' : ''}`}>
+                <item.Icon className="h-4 w-4 text-emerald-soft" strokeWidth={1.5} />
+                <span className="text-[0.68rem] tracking-[0.16em] uppercase text-muted-foreground">{item.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Browse Categories */}
       <section className="container-prose py-10 md:py-14">
