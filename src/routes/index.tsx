@@ -299,8 +299,8 @@ function Home() {
 
       {/* About Sadhu Vaswani Mission */}
       <section className="bg-emerald-deep text-ivory">
-        <div className="container-prose py-20 md:py-28 grid lg:grid-cols-[1fr,1.2fr] gap-14 items-center">
-          <div className="relative aspect-[4/5] rounded-lg overflow-hidden bg-ivory/5">
+        <div className="container-prose py-24 md:py-32 grid lg:grid-cols-[1fr,1.2fr] gap-16 md:gap-20 items-center">
+          <div className="relative aspect-[4/5] rounded-lg overflow-hidden bg-ivory/5 max-w-[280px] sm:max-w-[320px] lg:max-w-[380px] mx-auto w-full">
             <img src={sadhuPortrait.url} alt="Sadhu T. L. Vaswani" width={1200} height={1500} loading="lazy" className="w-full h-full object-cover object-top transition-transform duration-700 hover:scale-105" />
           </div>
 
